@@ -1,0 +1,504 @@
+// VARIABLES
+@transition-time: 0.3s;
+@opacity-default: 0.6;
+@dark-gray: lighten(black, 15%);
+
+@paypal: #009cde;
+@pagseguro: #73b843;
+@mercadopago: #01adef;
+@picpay: #21c25e;
+
+@direcao: #57acd6;
+@sub-direcao: #55ffff;
+@administracao: #ff0000;
+@moderacao: #00aa00;
+
+@discord: #6f85d4;
+@facebook: #4267b2;
+
+// GLOBAL
+*{
+    font-family: 'Ubuntu', sans-serif;
+    outline: none !important;
+
+    p, h1, h2, h3, h4{
+        margin: 0;
+    }
+}
+body{
+    background-color: #ececec;
+}
+
+// BUTTONS
+.btn{
+    font-weight: bold;
+    color: white !important;
+    border-radius: 0;
+}
+.btn-gray{
+    background-color: rgb(216, 216, 216);
+    border: none;
+    color: white;
+
+    &:hover{
+        background-color: rgb(187, 187, 187);
+    }
+}
+.btn-red{
+    background-color: rgb(255, 133, 133);
+
+    &:hover{
+        background-color: rgb(245, 105, 105);
+    }
+}
+.btn-green{
+    background-color: rgb(144, 240, 144);
+
+    &:hover{
+        background-color: rgb(134, 226, 134);
+    }
+}
+
+// CARDS
+.card{
+    border-radius: 5px;
+    box-shadow: 0px 3px 12px -3px rgba(0, 0, 0, 0.5);
+    border: none;
+    overflow: hidden;
+
+    .card-buttons{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+
+        form{
+            height: 100%;
+        }
+        a{
+            height: 100%;
+        }
+        button{
+            width: 50px;
+            height: 100%;
+            @media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+                opacity: 0.2;
+            }
+        }
+    }
+    .card-form{
+        padding: 50px 300px 50px 300px;
+        
+        @media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+            padding: 20px;
+        }
+        label{
+            margin-bottom: 0px;
+        }
+        input, select, textarea{
+            border-radius: 0;
+            height: 50px;
+        }
+        textarea{
+            height: 500px;
+        }
+    }
+}
+
+// HEADER
+.header{
+    background-color: #000;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        max-height: 90%;
+        max-width: 100%;
+    }
+}
+
+// NAVBAR
+.navbar{
+    height: 60px;
+    background-color: @dark-gray;
+    padding: 0;
+    overflow: hidden;
+    user-select: none;
+
+    .container{
+        height: 100%;
+        
+        div{
+            height: 100%;
+            
+            a{
+                height: 100%;
+
+                .nav-button{
+                    display: block;
+                    float:left;
+                    height: 100%;
+                    padding-left: 25px;
+                    padding-right: 25px;
+                    background-color: rgba(black, 0%);
+                    border: none;
+                    outline: none !important;
+                    color: white;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    transition: 0.14s;
+
+                    &:hover{
+                        background-color: lighten(black, 12%);
+                    }
+                    i{
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ADMIN
+.div-admin{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    a{
+        width: 100%;
+    }
+    .btn{
+        margin-bottom: 10px;
+        width: 100%;
+        height: 50px;
+    }
+}
+.div-functions{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button{
+        margin: 0 auto;
+        width: 100px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+// INDEX SPOTLIGHT
+.div-spotlight{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    user-select: none;
+    @media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+        height: auto;
+    }
+
+    .spotlight{
+        height: 100%;
+        width: 31%;
+        @media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+            height: 450px;
+            width: 100%;
+        }
+
+        a{
+            text-decoration: none;
+        }
+        .card{
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 115% auto;
+            transition: @transition-time;
+
+            &:hover{
+                background-size: 120% auto;
+            }
+            .text{
+                position: absolute;
+                bottom: 10px;
+
+                p{
+                    color: white;
+                    font-size: 20px;
+
+                    &:last-child{
+                        margin-bottom: 10px;
+                        font-size: 30px;
+                        font-weight: bold;
+                        line-height: 35px;
+                    }
+                }
+            }
+        }
+    }
+    .spotlight-second{
+        margin-left: 25px;
+        margin-right: 25px;
+        @media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+            margin: 25px 0 25px 0;
+        }
+
+        .card{
+            height: 47.2%;
+
+            &:first-child{
+                margin-bottom: 25px;
+            }
+        }
+    }
+    .spotlight-all{
+        .card{
+            background-color: @dark-gray;
+            padding: 10px;
+
+            .title{
+                text-align: center;
+                color: white;
+                font-weight: bold;
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+            .news{
+                overflow: hidden;
+                height: 350px;
+                
+                p{
+                    display: inline-block;
+                }
+                a{
+                    display:inline-block;
+                    color: white;
+                    font-size: 16px;
+                    line-height: 32px;
+                    text-decoration: none;
+                    width: 100%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+    }
+}
+
+// INDEX NEWS & INFO
+.news-info{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    justify-content: center;
+    
+    .subspotlight{
+        @media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+            display: none;
+        }
+
+        .card{
+            height: 160px;
+            background-image: url('../img/antihack.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            transition: @transition-time;
+
+            &:hover{
+                background-size: auto 103%;
+            }
+        }
+    }
+    .news{
+        width: 64.5%;
+        margin-right: 25px;
+        @media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+            width: 100%;
+            margin: 0;
+        }
+
+        .card{
+            margin-top: 25px;
+            
+            .card-body{
+                padding: 0;
+
+                .author{
+                    padding: 20px;
+                    display: flex;
+                    align-items: center;
+    
+                    img{
+                        border-radius: 5px;
+                        margin-right: 15px;                        
+                    }
+                    p{
+                        font-size: 14px;
+
+                        &:first-child{
+                            font-size: 16px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+                .title{
+                    background-color: @dark-gray;
+                    color: white;
+                    padding: 20px;
+
+                    p{
+                        font-size: 18px;
+                        letter-spacing: 1px;
+                    }
+                    h2{
+                        font-size: 26px;
+                        font-weight: bold;
+                    }
+                }
+                .content{
+                    padding: 20px;
+                }
+            }
+        }
+    }
+    .info{
+        width: 31%;
+        @media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+            width: 100%;
+        }
+
+        .ip{
+            .card{
+                margin-top: 25px;
+                height: auto;
+                padding: 15px 0 15px 0;
+                
+                .card-body{
+                    text-align: center;
+
+                    .ip-address{
+                        letter-spacing: -0.5px;
+                    }
+                    .ip-info{
+                        padding: 0 20px 0 20px;
+                    }
+                    button{
+                        border-radius: 5px;
+                        background-color: @dark-gray;
+                        color: white;
+                        border: none;
+                        padding-top: 15px;
+                        padding-bottom: 15px;
+                        width: 100%;
+                        margin-top: 25px;
+                        margin-bottom: 25px;
+                        transition: @transition-time;
+
+                        &:hover{
+                            background-color: lighten(black, 22%);
+                        }
+                    }
+                }
+            }
+        }
+        .discord{
+            .card{
+                margin-top: 25px;
+                height: 500px;
+
+                .card-body{
+                    padding: 0;
+
+                    .discord-widget{
+                        width: 100.1%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// NEWS
+.div-new{
+    .title{
+        text-align: left;
+
+        p{
+            margin-bottom: -1px;
+            letter-spacing: 1px;
+
+            &:last-child{
+                letter-spacing: 0;
+            }
+        }
+    }
+
+    .new-content{
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        height: auto;
+        justify-content: center;
+
+        .card-author{
+            height: auto;
+            width: 20%;
+            margin-right: 25px;
+            @media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+                margin: 0;
+                width: 100%;
+            }
+
+            .card{
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                padding-top: 20px;
+
+                img{
+                    border: 5px solid black;
+                }
+                p{
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    margin-top: 30px;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        .card-content{
+            height: auto;
+            width: 77%;
+            @media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+                margin: 0;
+                margin-top: 25px;
+                width: 100%;
+            }
+
+            .card{
+                width: 100%;
+
+                .card-body{
+                    padding: 40px;
+                }
+            }
+        }
+    }
+}

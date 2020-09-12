@@ -1,0 +1,438 @@
+* {
+  font-family: 'Ubuntu', sans-serif;
+  outline: none !important;
+}
+* p,
+* h1,
+* h2,
+* h3,
+* h4 {
+  margin: 0;
+}
+body {
+  background-color: #ececec;
+}
+.btn {
+  font-weight: bold;
+  color: white !important;
+  border-radius: 0;
+}
+.btn-gray {
+  background-color: #d8d8d8;
+  border: none;
+  color: white;
+}
+.btn-gray:hover {
+  background-color: #bbbbbb;
+}
+.btn-red {
+  background-color: #ff8585;
+}
+.btn-red:hover {
+  background-color: #f56969;
+}
+.btn-green {
+  background-color: #90f090;
+}
+.btn-green:hover {
+  background-color: #86e286;
+}
+.card {
+  border-radius: 5px;
+  box-shadow: 0px 3px 12px -3px rgba(0, 0, 0, 0.5);
+  border: none;
+  overflow: hidden;
+}
+.card .card-buttons {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+.card .card-buttons form {
+  height: 100%;
+}
+.card .card-buttons a {
+  height: 100%;
+}
+.card .card-buttons button {
+  width: 50px;
+  height: 100%;
+}
+@media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+  .card .card-buttons button {
+    opacity: 0.2;
+  }
+}
+.card .card-form {
+  padding: 50px 300px 50px 300px;
+}
+@media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+  .card .card-form {
+    padding: 20px;
+  }
+}
+.card .card-form label {
+  margin-bottom: 0px;
+}
+.card .card-form input,
+.card .card-form select,
+.card .card-form textarea {
+  border-radius: 0;
+  height: 50px;
+}
+.card .card-form textarea {
+  height: 500px;
+}
+.header {
+  background-color: #000;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header img {
+  max-height: 90%;
+  max-width: 100%;
+}
+.navbar {
+  height: 60px;
+  background-color: #262626;
+  padding: 0;
+  overflow: hidden;
+  user-select: none;
+}
+.navbar .container {
+  height: 100%;
+}
+.navbar .container div {
+  height: 100%;
+}
+.navbar .container div a {
+  height: 100%;
+}
+.navbar .container div a .nav-button {
+  display: block;
+  float: left;
+  height: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  outline: none !important;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.14s;
+}
+.navbar .container div a .nav-button:hover {
+  background-color: #1f1f1f;
+}
+.navbar .container div a .nav-button i {
+  font-size: 22px;
+}
+.div-admin {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.div-admin a {
+  width: 100%;
+}
+.div-admin .btn {
+  margin-bottom: 10px;
+  width: 100%;
+  height: 50px;
+}
+.div-functions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div-functions button {
+  margin: 0 auto;
+  width: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.div-spotlight {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+  user-select: none;
+}
+@media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+  .div-spotlight {
+    height: auto;
+  }
+}
+.div-spotlight .spotlight {
+  height: 100%;
+  width: 31%;
+}
+@media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+  .div-spotlight .spotlight {
+    height: 450px;
+    width: 100%;
+  }
+}
+.div-spotlight .spotlight a {
+  text-decoration: none;
+}
+.div-spotlight .spotlight .card {
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 115% auto;
+  transition: 0.3s;
+}
+.div-spotlight .spotlight .card:hover {
+  background-size: 120% auto;
+}
+.div-spotlight .spotlight .card .text {
+  position: absolute;
+  bottom: 10px;
+}
+.div-spotlight .spotlight .card .text p {
+  color: white;
+  font-size: 20px;
+}
+.div-spotlight .spotlight .card .text p:last-child {
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 35px;
+}
+.div-spotlight .spotlight-second {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+@media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+  .div-spotlight .spotlight-second {
+    margin: 25px 0 25px 0;
+  }
+}
+.div-spotlight .spotlight-second .card {
+  height: 47.2%;
+}
+.div-spotlight .spotlight-second .card:first-child {
+  margin-bottom: 25px;
+}
+.div-spotlight .spotlight-all .card {
+  background-color: #262626;
+  padding: 10px;
+}
+.div-spotlight .spotlight-all .card .title {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.div-spotlight .spotlight-all .card .news {
+  overflow: hidden;
+  height: 350px;
+}
+.div-spotlight .spotlight-all .card .news p {
+  display: inline-block;
+}
+.div-spotlight .spotlight-all .card .news a {
+  display: inline-block;
+  color: white;
+  font-size: 16px;
+  line-height: 32px;
+  text-decoration: none;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.news-info {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+@media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+  .news-info .subspotlight {
+    display: none;
+  }
+}
+.news-info .subspotlight .card {
+  height: 160px;
+  background-image: url('../img/antihack.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  transition: 0.3s;
+}
+.news-info .subspotlight .card:hover {
+  background-size: auto 103%;
+}
+.news-info .news {
+  width: 64.5%;
+  margin-right: 25px;
+}
+@media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+  .news-info .news {
+    width: 100%;
+    margin: 0;
+  }
+}
+.news-info .news .card {
+  margin-top: 25px;
+}
+.news-info .news .card .card-body {
+  padding: 0;
+}
+.news-info .news .card .card-body .author {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.news-info .news .card .card-body .author img {
+  border-radius: 5px;
+  margin-right: 15px;
+}
+.news-info .news .card .card-body .author p {
+  font-size: 14px;
+}
+.news-info .news .card .card-body .author p:first-child {
+  font-size: 16px;
+  font-weight: bold;
+}
+.news-info .news .card .card-body .title {
+  background-color: #262626;
+  color: white;
+  padding: 20px;
+}
+.news-info .news .card .card-body .title p {
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+.news-info .news .card .card-body .title h2 {
+  font-size: 26px;
+  font-weight: bold;
+}
+.news-info .news .card .card-body .content {
+  padding: 20px;
+}
+.news-info .info {
+  width: 31%;
+}
+@media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+  .news-info .info {
+    width: 100%;
+  }
+}
+.news-info .info .ip .card {
+  margin-top: 25px;
+  height: auto;
+  padding: 15px 0 15px 0;
+}
+.news-info .info .ip .card .card-body {
+  text-align: center;
+}
+.news-info .info .ip .card .card-body .ip-address {
+  letter-spacing: -0.5px;
+}
+.news-info .info .ip .card .card-body .ip-info {
+  padding: 0 20px 0 20px;
+}
+.news-info .info .ip .card .card-body button {
+  border-radius: 5px;
+  background-color: #262626;
+  color: white;
+  border: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  transition: 0.3s;
+}
+.news-info .info .ip .card .card-body button:hover {
+  background-color: #383838;
+}
+.news-info .info .discord .card {
+  margin-top: 25px;
+  height: 500px;
+}
+.news-info .info .discord .card .card-body {
+  padding: 0;
+}
+.news-info .info .discord .card .card-body .discord-widget {
+  width: 100.1%;
+  height: 100%;
+}
+.div-new .title {
+  text-align: left;
+}
+.div-new .title p {
+  margin-bottom: -1px;
+  letter-spacing: 1px;
+}
+.div-new .title p:last-child {
+  letter-spacing: 0;
+}
+.div-new .new-content {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  height: auto;
+  justify-content: center;
+}
+.div-new .new-content .card-author {
+  height: auto;
+  width: 20%;
+  margin-right: 25px;
+}
+@media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+  .div-new .new-content .card-author {
+    margin: 0;
+    width: 100%;
+  }
+}
+.div-new .new-content .card-author .card {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 20px;
+}
+.div-new .new-content .card-author .card img {
+  border: 5px solid black;
+}
+.div-new .new-content .card-author .card p {
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+.div-new .new-content .card-content {
+  height: auto;
+  width: 77%;
+}
+@media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+  .div-new .new-content .card-content {
+    margin: 0;
+    margin-top: 25px;
+    width: 100%;
+  }
+}
+.div-new .new-content .card-content .card {
+  width: 100%;
+}
+.div-new .new-content .card-content .card .card-body {
+  padding: 40px;
+}

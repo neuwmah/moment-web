@@ -1,0 +1,36 @@
+{{#each errors}}
+<div class="alert alert-danger">{{text}}</div>
+{{/each}}
+
+<h2 class="text-center font-weight-bold mb-3">EDITAR NOVIDADE</h2>
+<hr>
+
+<div class="div-functions">
+    <a href="/admin/novidades"><button class="btn btn-gray"><i class="fa fa-chevron-left"></i></button></a>
+    <form action="/admin/novidades/editar" method="POST">
+        <button type="submit" class="btn btn-green"><i class="fa fa-check"></i></button>
+</div>
+
+<div class="card mt-4 mb-4">
+    <div class="card-body card-form mt-2 mb-2">
+        <input type="hidden" name="id" value="{{new._id}}">
+
+        <label for="author" class="font-weight-bold">Autor</label>
+        <select name="author" class="custom-select">
+            <option value="{{new.author}}">{{new.author}}</option>
+        </select>
+        
+        <label for="title" class="font-weight-bold mt-4">Título</label>
+        <input type="text" id="title" class="form-control" name="title" value="{{new.title}}">
+        
+        <label for="subtitle" class="font-weight-bold mt-4">Subtítulo</label>
+        <input type="text" id="subtitle" class="form-control" name="subtitle" value="{{new.subtitle}}">
+
+        <label for="title" class="font-weight-bold mt-4">Conteúdo</label>
+        <textarea name="content" class="form-control">{{new.content}}</textarea>
+
+        <label for="title" class="font-weight-bold mt-4">Slug</label>
+        <input type="text" id="slug" class="form-control" name="slug" value="{{new.slug}}">
+    </div>
+</div>
+</form>
