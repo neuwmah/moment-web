@@ -1,7 +1,6 @@
-const mongoose = require("mongoose")
-const Schema = mongoose.Schema
+const mongoose = require('mongoose')
 
-const New = new Schema({
+const NewSchema = new mongoose.Schema({
     author: {
         type: String,
         required: true
@@ -24,20 +23,16 @@ const New = new Schema({
         unique: true,
         lowercase: true
     },
-    date: {
-        type: Date,
-        default: Date.now()
-    },
-    spotlight: {
+    spotlightRank: {
         type: Number,
         default: 0 
     },
     spotlightTitle: {
         type: String
     },
-    backgroundImage: {
+    spotlightImage: {
         type: String
     }
-})
+}, { timestamps: true })
 
-mongoose.model("news", New)
+module.exports = mongoose.model('New', NewSchema)
