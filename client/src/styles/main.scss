@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+// VARIABLES
+$transition-time: 0.3s;
+$opacity-default: 0.6;
+$dark-gray: lighten(black, 15%);
+
+$paypal: #009cde;
+$pagseguro: #73b843;
+$mercadopago: #01adef;
+$picpay: #21c25e;
+
+$discord: #6f85d4;
+$facebook: #4267b2;
+
+// GLOBAL
+*, p, h1, h2, h3, h4, a{
+    font-family: 'Ubuntu', sans-serif;
+    outline: none !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    outline: none !important;
+    text-decoration: none;
+}
+body{
+    background-color: #ececec;
+}
+.card{
+    border-radius: 5px;
+    box-shadow: 0px 3px 12px -3px rgba(0, 0, 0, 0.5);
+    border: none;
+    overflow: hidden;
+}

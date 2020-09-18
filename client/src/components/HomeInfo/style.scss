@@ -1,0 +1,59 @@
+$transition-time: 0.3s;
+$dark-gray: lighten(black, 15%);
+
+.info{
+    width: 31%;
+    @media screen and (max-width: 1023px), (max-width: 1080px) and (min-height: 1366px) {
+        width: 100%;
+    }
+
+    .ip{
+        .card{
+            margin-top: 25px;
+            height: auto;
+            padding: 15px 0 15px 0;
+            
+            .card-body{
+                text-align: center;
+
+                .ip-address{
+                    letter-spacing: -0.5px;
+                }
+                .ip-info{
+                    padding: 0 20px 0 20px;
+                }
+                button{
+                    border-radius: 5px;
+                    background-color: $dark-gray;
+                    color: white;
+                    border: none;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    width: 100%;
+                    margin-top: 25px;
+                    margin-bottom: 25px;
+                    transition: $transition-time;
+
+                    &:hover{
+                        background-color: lighten(black, 22%);
+                    }
+                }
+            }
+        }
+    }
+    .discord{
+        .card{
+            margin-top: 25px;
+            height: 500px;
+
+            .card-body{
+                padding: 0;
+
+                .discord-widget{
+                    width: 100.1%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
