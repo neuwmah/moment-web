@@ -1,10 +1,7 @@
 //load modules
 const express = require("express")
 const app = express()
-const path = require("path")
 const mongoose = require("mongoose")
-const moment = require('moment')
-const m = moment()
 const cors = require('cors')
 
 //load routes

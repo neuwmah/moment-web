@@ -1,5 +1,6 @@
 const User = require('../models/User')
 const mongoose = require('mongoose')
+const bcrypt = require('bcrypt')
 
 module.exports = {
     async createUser(req, res) {
@@ -28,22 +29,27 @@ module.exports = {
                 })
             }
 
-            //create user
-            const createdUser = await User.create({
-                username,
-                password,
-                email,
-                nickname,
-                admin
-            })
+            //bcrypt password
+            bcrypt.hash(password, 10, async function(err, hash){
 
-            //response
-            return res.status(200).send({
-                message: 'User created successfully!',
-                data: createdUser
+                //create user
+                const createdUser = await User.create({
+                    username,
+                    password: hash,
+                    email,
+                    nickname,
+                    admin
+                })
+
+                //response
+                return res.status(200).send({
+                    message: 'User created successfully!',
+                    data: createdUser
+                })
+
             })
         } catch(e) {
-            return res.status(400).send(e)
+            return console.log(e)
         }
     },
 
@@ -107,6 +113,29 @@ module.exports = {
             email == null ? email = findUser.email : null
             nickname == null ? nickname = findUser.nickname : null
             admin == null ? admin = findUser.admin : null
+
+
+            //bcrypt password if updated
+            if(password != findUser.password){
+                bcrypt.hash(password, 10, async function(err, hash){
+
+                    //create user
+                    const editedUser = await User.findByIdAndUpdate(user_id, {
+                        username,
+                        password,
+                        email,
+                        nickname,
+                        admin
+                    })
+
+                    //response
+                    return res.status(200).send({
+                        message: 'User updated successfully!',
+                        data: editedUser
+                    })
+                    
+                })
+            }
 
             //edit user
             const editedUser = await User.findByIdAndUpdate(user_id, {

@@ -5,6 +5,5 @@ const NewController = require("../controllers/NewController")
 
 //routes
 router.get('/', NewController.listNews)
-//router.get('/changelog', ChangeController.listChanges)
 
 module.exports = router

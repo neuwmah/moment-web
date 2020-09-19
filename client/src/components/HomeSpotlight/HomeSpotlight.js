@@ -39,7 +39,7 @@ function HomeSpotlight() {
             <Card>
                 <CardBody>
                     <h2 className="title">Novidades</h2>
-                    <div className="news">
+                    <div className="news-list">
                         {news.map(New => { return <a href={"novidades/" + New.slug}><strong>{New.subtitle}:</strong> {New.title}</a> })}
                     </div>
                 </CardBody>
