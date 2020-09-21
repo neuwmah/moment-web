@@ -7,15 +7,13 @@ import HomeInfo from '../HomeInfo/HomeInfo'
 
 function index() {
     return (
-        <div>
-            <Container className="home-container">
-                <HomeSpotlight />
-                <div className="news-info">
-                    <HomeNews />
-                    <HomeInfo />
-                </div>
-            </Container>
-        </div>
+        <Container className="home-container">
+            <HomeSpotlight />
+            <div className="news-info">
+                <HomeNews />
+                <HomeInfo />
+            </div>
+        </Container>
     )
 }
 
