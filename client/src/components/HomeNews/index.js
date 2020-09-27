@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useHistory } from 'react-router-dom'
-import api from '../../services/api'
 import antihackbg from '../../assets/antihack.png' 
 import moment from 'moment'
 import 'moment/locale/pt-br'
@@ -28,7 +27,7 @@ const useStyles = makeStyles(theme => ({
         }
     },
     authorImage: {
-        borderRadius: 5,
+        borderRadius: 3,
         marginRight: 15
     }, 
     newTitle: {
@@ -36,29 +35,15 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
-function HomeContent() {
+function HomeContent(props) {
+    const { news } = props
     const classes = useStyles()
     const theme = useTheme()
     const history = useHistory()
-    const [news, setNews] = useState([])
 
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'), {
         defaultMatches: true
     })
-
-    async function getNews(){
-        try {
-            const loadedNews = await api.server.get('/')
-            const { data } = loadedNews
-            setNews(data.data)
-        } catch(e) {
-            console.log(e)
-        }
-    }
-
-    useEffect(() => {
-        getNews() 
-    }, [])
 
     return (
         <Box

@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Admin() {
+function Banlist() {
     return (
         <>
         </>
     )
 }
 
-export default Admin
+export default Banlist

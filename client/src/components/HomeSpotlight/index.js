@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useHistory } from 'react-router-dom'
-import api from '../../services/api'
 import { FaStar } from 'react-icons/fa'
 import { 
     Grid, 
@@ -12,7 +11,7 @@ import {
     Box, 
     Typography, 
     Tooltip, 
-    Zoom 
+    Zoom
 } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
@@ -30,8 +29,7 @@ const useStyles = makeStyles(theme => ({
         justifyContent: "flex-end",
         transition: "0.2s",
         height: 220,
-        paddingLeft: 10,
-        paddingBottom: 10,
+        padding: 10,
         '&:hover': {
             backgroundSize: "115% auto"
         },
@@ -76,29 +74,15 @@ const CustomTooltip = withStyles({
     }
 })(Tooltip);
 
-function HomeSpotlight() {
+function HomeSpotlight(props) {
+    const { news } = props
     const classes = useStyles()
     const theme = useTheme()
     const history = useHistory()
-    const [news, setNews] = useState([])
 
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'), {
         defaultMatches: true
     })
-
-    async function getNews(){
-        try {
-            const loadedNews = await api.server.get('/')
-            const { data } = loadedNews
-            setNews(data.data)
-        } catch(e) {
-            console.log(e)
-        }
-    }
-
-    useEffect(() => {
-        getNews() 
-    }, [])
 
     return (
         <Box

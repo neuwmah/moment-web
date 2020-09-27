@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Admin() {
+function Shop() {
     return (
         <>
         </>
     )
 }
 
-export default Admin
+export default Shop

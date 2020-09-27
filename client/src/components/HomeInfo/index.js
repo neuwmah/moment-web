@@ -47,7 +47,10 @@ function HomeInfo() {
             p={6}>
                 <Box fontSize={26}>Versão 1.5.2</Box>
                 <Box>JOGAR.MOMENTCRAFT.COM.BR</Box>
-                <button className={classes.button}>COPIAR IP</button>
+                <button 
+                className={classes.button}>
+                    COPIAR IP
+                </button>
                 <Box>Recomendamos que você utilize o <strong>anti-hack</strong> para jogar no servidor.</Box>
             </Box>
             
