@@ -44,7 +44,7 @@ function HomeInfo() {
             textAlign="center"
             height="auto"
             elevation={5}
-            p={6}>
+            p={8}>
                 <Box fontSize={26}>Versão 1.5.2</Box>
                 <Box>JOGAR.MOMENTCRAFT.COM.BR</Box>
                 <button 

@@ -16,6 +16,7 @@ import {
 const useStyles = makeStyles(theme => ({
     gridAntihack: {
         cursor: "pointer",
+        backgroundColor: "black",
         backgroundImage: `url(${antihackbg})`,
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
@@ -91,19 +92,17 @@ function HomeContent(props) {
                             className={classes.authorImage}
                             src={"https://cravatar.eu/avatar/" + New.author + "/70.png"} 
                             alt="author" />
-                            <Typography>
+                            <Box>
                                 <Box 
-                                display="inline" 
                                 fontSize={16} 
                                 fontWeight={600}>
                                     {New.author}
-                                </Box><br/>
+                                </Box>
                                 <Box 
-                                display="inline" 
                                 fontSize={14}>
                                     {moment(New.createdAt).format('LL')}
                                 </Box>
-                            </Typography>
+                            </Box>
                         </Box>
                         
                         <Box
@@ -113,22 +112,20 @@ function HomeContent(props) {
                         onClick={() => { 
                             history.push("novidades/" + New.slug);
                         }}>
-                            <Typography>
-                                <Box 
-                                display="inline"
-                                color="white" 
-                                fontSize={18}>
-                                    {New.subtitle}
-                                </Box><br/>
-                                <Box 
-                                display="inline"
-                                color="white"
-                                fontWeight="bold"
-                                lineHeight={1} 
-                                fontSize={26}>
-                                    {New.title}
-                                </Box>
-                            </Typography>
+                            <Box 
+                            display="inline"
+                            color="white" 
+                            fontSize={18}>
+                                {New.subtitle}
+                            </Box><br/>
+                            <Box 
+                            display="inline"
+                            color="white"
+                            fontWeight="bold"
+                            lineHeight={1} 
+                            fontSize={26}>
+                                {New.title}
+                            </Box>
                         </Box>
                         
                         <Box

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import logo from '../../assets/M.png'
 import { BiMenu } from 'react-icons/bi'
 import { RiAdminLine } from 'react-icons/ri'
 import { 
@@ -75,36 +74,44 @@ function Navbar() {
         <Box
         component={Grid} 
         container 
-        direction="column"
+        justify="center"
         alignItems="center"
         bgcolor="#262626">
-            <Box
-            display="flex"
-            justifyContent="space-between"
-            width={isMobile ? "100%" : "960px"}
-            height={50}>
-                <Box display="flex">
-                    {isMobile ?
-                    <Box 
-                    className={classes.navButton}
-                    onClick={() => {
-                        setMobileNavbar(!mobileNavbar)
-                    }}>
-                        <BiMenu fontSize="24px" />
+            <Grid
+            item
+            px={0.8}
+            xl={8}
+            lg={10}
+            md={12}
+            xs={12}>
+                <Box
+                display="flex"
+                justifyContent="space-between"
+                width="100%"
+                height={50}>
+                    <Box display="flex">
+                        {isMobile ?
+                        <Box 
+                        className={classes.navButton}
+                        onClick={() => {
+                            setMobileNavbar(!mobileNavbar)
+                        }}>
+                            <BiMenu fontSize="24px" />
+                        </Box>
+                        :
+                        <>
+                        <Box className={classes.navButton} onClick={() => ( history.push('/'))}>HOME</Box>
+                        <Box className={classes.navButton} onClick={() => ( history.push('/loja'))}>LOJA</Box>
+                        <Box className={classes.navButton} onClick={() => ( history.push('/banimentos'))}>BANIMENTOS</Box>
+                        </>
+                        }
                     </Box>
-                    :
-                    <>
-                    <Box className={classes.navButton} onClick={() => ( history.push('/'))}>HOME</Box>
-                    <Box className={classes.navButton} onClick={() => ( history.push('/loja'))}>LOJA</Box>
-                    <Box className={classes.navButton} onClick={() => ( history.push('/banimentos'))}>BANIMENTOS</Box>
-                    </>
-                    }
-                </Box>
 
-                <Box display="flex">
-                    <Box className={classes.navButton} onClick={() => ( history.push('/admin'))}><RiAdminLine fontSize="24px" /></Box>
+                    <Box display="flex">
+                        <Box className={classes.navButton} onClick={() => ( history.push('/admin'))}><RiAdminLine fontSize="24px" /></Box>
+                    </Box>
                 </Box>
-            </Box>
+            </Grid>
         </Box>
         </>
     )

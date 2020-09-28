@@ -95,7 +95,7 @@ function HomeSpotlight(props) {
             pr={isMobile ? 0 : 0.8}
             md={4}  
             xs={12}>
-                {news.map(New => { if(New.spotlightRank === 1) return ( 
+                {news.filter(New => New.spotlightRank === 1).map(New => { return ( 
                 <Box 
                 key={New._id}
                 component={Paper} 
@@ -121,7 +121,7 @@ function HomeSpotlight(props) {
             px={isMobile ? 0 : 0.4}
             md={4} 
             xs={12}>
-                {news.map(New => { if(New.spotlightRank > 1) return ( 
+                {news.filter(New => New.spotlightRank > 1).map(New => { return ( 
                 <Box 
                 key={New._id}
                 component={Paper} 
@@ -173,7 +173,7 @@ function HomeSpotlight(props) {
                         onClick={() => { 
                             history.push("novidades/" + New.slug); 
                         }}>
-                            <Box fontWeight="bold" display="inline">{New.subtitle}:</Box> {New.title}
+                            <strong>{New.subtitle}:</strong> {New.title}
                         </Typography>
                     </CustomTooltip>
                     )})}

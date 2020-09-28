@@ -52,7 +52,7 @@ function Home() {
             <Box className={classes.loading} style={{
                 opacity: loadingOpacity ? 1 : 0,
                 visibility: loading ? "visible" : "hidden"
-            }}><CircularProgress color="gray" size={40} /></Box>
+            }}><CircularProgress size={40} style={{ "color": "black" }} /></Box>
             <HomeContent news={news} />
         </>
     )

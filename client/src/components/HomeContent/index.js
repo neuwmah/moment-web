@@ -4,8 +4,22 @@ import HomeNews from '../HomeNews'
 import HomeInfo from '../HomeInfo'
 import { 
     Grid, 
-    Box
+    Box,
+    createMuiTheme,
+    ThemeProvider
 } from '@material-ui/core'
+
+const theme = createMuiTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 960,
+        lg: 1230,
+        xl: 1480,
+      },
+    },
+})
 
 function HomeContent(props) {
     const { news } = props
@@ -19,32 +33,36 @@ function HomeContent(props) {
     }
 
     return (
-        <Box
-        component={Grid} 
-        container 
-        direction="column"
-        alignItems="center"
-        pt={1.2}>
-            { !isEmpty(news) ?
+        <ThemeProvider theme={theme}>
             <Box
-            component={Grid}
-            item
-            px={0.8}
-            xs={12}>
-                <HomeSpotlight news={news} />  
-
+            component={Grid} 
+            container 
+            alignItems="center"
+            justify="center"
+            pt={1.2}>
                 <Box
                 component={Grid}
-                container
+                item
+                px={0.8}
+                xl={8}
+                lg={10}
+                md={12}
                 xs={12}>
-                    <HomeNews news={news} />
-                    <HomeInfo />
+                    { isEmpty(news) ? 
+                    <Box textAlign="center" mb={1.2}>Nenhuma novidade encontrada.<br/>Registre-as no banco de dados!</Box> 
+                    : 
+                    <HomeSpotlight news={ !isEmpty(news) ? news : news } />  
+                    }
+
+                    <Box
+                    component={Grid}
+                    container>
+                        <HomeNews news={news} />
+                        <HomeInfo />
+                    </Box>
                 </Box>
             </Box>
-            :
-            <Box textAlign="center">Nenhuma novidade encontrada.<br/>Registre-as no banco de dados!</Box>
-            }
-        </Box>
+        </ThemeProvider>
     )
 }
 

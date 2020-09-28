@@ -4,8 +4,9 @@ const mongoose = require('mongoose')
 
 module.exports = {
     async createNew(req, res) {
-        const { user_id } = req.headers
+        //const { user_id } = req.headers
         const {
+            user_id,
             title,
             subtitle,
             content,
