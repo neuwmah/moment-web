@@ -33,7 +33,7 @@
   "scripts": {
     "start": "node server.js",
     "client": "cd client && npm start",
-    "dev": "concurrently -n 'server,client' -c 'green, blue' \"nodemon server.js\" \"npm run client\""
+    "dev": "concurrently -n 'server,client' -c 'green,magenta' \"nodemon server.js\" \"npm run client\""
   },
   "keywords": [],
   "author": "",

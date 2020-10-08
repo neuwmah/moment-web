@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { BiMenu } from 'react-icons/bi'
-import { RiAdminLine } from 'react-icons/ri'
+import { RiAdminLine, RiShoppingBagLine } from 'react-icons/ri'
 import { 
     Grid, 
     Box,
@@ -83,6 +83,7 @@ function Navbar() {
             xl={8}
             lg={10}
             md={12}
+            sm={9}
             xs={12}>
                 <Box
                 display="flex"
@@ -108,7 +109,12 @@ function Navbar() {
                     </Box>
 
                     <Box display="flex">
-                        <Box className={classes.navButton} onClick={() => ( history.push('/admin'))}><RiAdminLine fontSize="24px" /></Box>
+                        <Box className={classes.navButton} onClick={() => ( history.push('/carrinho'))}>
+                            1<RiShoppingBagLine fontSize="24px" />
+                        </Box>
+                        <Box className={classes.navButton} onClick={() => ( history.push('/admin'))}>
+                            <RiAdminLine fontSize="24px" />
+                        </Box>
                     </Box>
                 </Box>
             </Grid>

@@ -28,7 +28,7 @@ function Admin() {
         <>
         <AdminNavbar setRouter={setRouter} />
         { router === 0 && <AdminIndex /> }
-        { router === 1 && <AdminNewAdd users={users} /> }
+        { router === 1 && users ? <AdminNewAdd users={users} /> : null }
         { router === 2 && <AdminNewEdit /> }
         { router === 3 && <AdminNewRemove /> }
         </>

@@ -25,11 +25,8 @@ function HomeContent(props) {
     const { news } = props
 
     function isEmpty(obj) {
-        for(var key in obj) {
-            if(obj.hasOwnProperty(key))
-                return false;
-        }
-        return true;
+        if (Array.isArray(obj) && obj.length) return false 
+        return true
     }
 
     return (
@@ -47,17 +44,26 @@ function HomeContent(props) {
                 xl={8}
                 lg={10}
                 md={12}
+                sm={9}
                 xs={12}>
-                    { isEmpty(news) ? 
-                    <Box textAlign="center" mb={1.2}>Nenhuma novidade encontrada.<br/>Registre-as no banco de dados!</Box> 
-                    : 
-                    <HomeSpotlight news={ !isEmpty(news) ? news : news } />  
-                    }
+                    { !isEmpty(news) ? 
+                    <HomeSpotlight news={news} /> : 
+                    <p style={{ textAlign : "center", marginBottom : 9.6 }}><strong>ATENÇÃO: </strong>Projeto ainda em desenvolvimento!</p> }
 
                     <Box
                     component={Grid}
                     container>
-                        <HomeNews news={news} />
+                        { isEmpty(news) ? 
+                        <HomeNews news={[{
+                            _id: 1,
+                            slug: "adicione-novidades-atraves-do-painel",
+                            author: "NinguemNunka",
+                            subtitle: "momentcraft-web",
+                            title: "Bem-vindo(a) ao site do servidor!",
+                            content: "Este é o futuro website do servidor MomentCraft! Para uma visualização completa, adicione novos registros ao banco de dados através do painel de administrador."
+                        }]} />
+                        : <HomeNews news={news} /> }
+
                         <HomeInfo />
                     </Box>
                 </Box>
