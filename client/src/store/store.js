@@ -5,10 +5,12 @@ import storage from 'redux-persist/lib/storage'
 
 import calculatorReducer from './reducer/Calculator.reducer'
 import newsReducer from './reducer/News.reducer'
+import usersReducer from './reducer/Users.reducer'
 
 const rootReducer = combineReducers({
     calculator: calculatorReducer,
-    news: newsReducer
+    news: newsReducer,
+    users: usersReducer
 })
 
 const persistedReducer = persistReducer({

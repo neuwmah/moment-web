@@ -11,7 +11,7 @@ import HomeInfo from '../HomeInfo'
 import { 
     Grid, 
     Box,
-    createMuiTheme,
+    unstable_createMuiStrictModeTheme as createMuiTheme,
     ThemeProvider
 } from '@material-ui/core'
 

@@ -5,13 +5,13 @@ const UserController = require("../controllers/UserController")
 
 //new
 router.get('/novidades', NewController.listNews)
-router.post('/novidades/criar', NewController.createNew)
+router.post('/novidades/adicionar', NewController.createNew)
 router.delete('/novidades/deletar/:new_id', NewController.deleteNew)
 router.put('/novidades/editar', NewController.editNew)
 
 //user
 router.get('/usuarios', UserController.listUsers)
-router.post('/usuarios/criar', UserController.createUser)
+router.post('/usuarios/adicionar', UserController.createUser)
 router.delete('/usuarios/deletar/:user_id', UserController.deleteUser)
 router.put('/usuarios/editar', UserController.editUser)
 

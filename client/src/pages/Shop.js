@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { sum } from '../store/actions/Calculator.actions'
+import Header from '../shared/Header'
+import Navbar from '../shared/Navbar'
 import { 
     Box,
     Grid
@@ -14,6 +16,8 @@ function Shop() {
 
     return (
         <>
+            <Header />
+            <Navbar />
             <Box
             component={Grid} 
             container 

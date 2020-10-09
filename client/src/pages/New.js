@@ -1,16 +1,16 @@
 import React from 'react'
 import Header from '../shared/Header'
 import Navbar from '../shared/Navbar'
-import HomeContent from '../components/HomeContent'
+import NewContent from '../components/NewContent'
 
-function Home() {
+function New() {
     return (
         <>
             <Header />
             <Navbar />
-            <HomeContent />
+            <NewContent />
         </>
     )
 }
 
-export default Home
+export default New

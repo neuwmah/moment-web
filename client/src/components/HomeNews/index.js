@@ -1,40 +1,16 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import antihackbg from '../../assets/antihack.png' 
 import moment from 'moment'
 import 'moment/locale/pt-br'
 import { 
     Grid, 
     Box, 
     Typography, 
-    makeStyles,
     useTheme,
     useMediaQuery,
     Paper
 } from '@material-ui/core'
-
-const useStyles = makeStyles(theme => ({
-    gridAntihack: {
-        cursor: "pointer",
-        backgroundColor: "black",
-        backgroundImage: `url(${antihackbg})`,
-        backgroundPosition: "center center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "auto 100%",
-        transition: "0.3s",
-        height: 160,
-        '&:hover': {
-            backgroundSize: "auto 103%"
-        }
-    },
-    authorImage: {
-        borderRadius: 3,
-        marginRight: 15
-    }, 
-    newTitle: {
-        cursor: "pointer"
-    }
-}))
+import useStyles from './style'
 
 function HomeContent({ news }) {
     const classes = useStyles()

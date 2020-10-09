@@ -1,10 +1,10 @@
 import React from 'react'
 
-function AdminIndex() {
+function AdminHome() {
     return (
         <>
         </>
     )
 }
 
-export default AdminIndex
+export default AdminHome
