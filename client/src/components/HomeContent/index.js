@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+
+import { useSelector, useDispatch } from 'react-redux'
+import { loadNews, loadSpotlightNews } from '../../store/reducer/News.reducer'
+import { selectAllNews, selectSpotlightNews } from '../../store/selectors/News.selector'
+
 import HomeSpotlight from '../HomeSpotlight'
 import HomeNews from '../HomeNews'
 import HomeInfo from '../HomeInfo'
+
 import { 
     Grid, 
     Box,
@@ -21,8 +27,15 @@ const theme = createMuiTheme({
     },
 })
 
-function HomeContent(props) {
-    const { news } = props
+function HomeContent() {
+    const dispatch = useDispatch()
+    const news = useSelector(selectAllNews)
+    const spotlightNews = useSelector(selectSpotlightNews)
+
+    useEffect(() => {
+        dispatch(loadNews())
+        dispatch(loadSpotlightNews())
+    }, [dispatch])
 
     function isEmpty(obj) {
         if (Array.isArray(obj) && obj.length) return false 
@@ -47,22 +60,23 @@ function HomeContent(props) {
                 sm={9}
                 xs={12}>
                     { !isEmpty(news) ? 
-                    <HomeSpotlight news={news} /> : 
+                    <HomeSpotlight news={news} spotlightNews={spotlightNews} /> : 
                     <p style={{ textAlign : "center", marginBottom : 9.6 }}><strong>ATENÇÃO: </strong>Projeto ainda em desenvolvimento!</p> }
-
+                    
                     <Box
                     component={Grid}
                     container>
-                        { isEmpty(news) ? 
+                        { !isEmpty(news) ?
+                        <HomeNews news={news} /> :
                         <HomeNews news={[{
                             _id: 1,
                             slug: "adicione-novidades-atraves-do-painel",
                             author: "NinguemNunka",
                             subtitle: "momentcraft-web",
                             title: "Bem-vindo(a) ao site do servidor!",
-                            content: "Este é o futuro website do servidor MomentCraft! Para uma visualização completa, adicione novos registros ao banco de dados através do painel de administrador."
-                        }]} />
-                        : <HomeNews news={news} /> }
+                            content: "Este é o futuro website do servidor MomentCraft! "
+                                   + "Para uma visualização completa, adicione novos registros ao banco de dados através do painel de administrador."
+                        }]} /> }
 
                         <HomeInfo />
                     </Box>

@@ -74,8 +74,7 @@ const CustomTooltip = withStyles({
     }
 })(Tooltip);
 
-function HomeSpotlight(props) {
-    const { news } = props
+function HomeSpotlight({ news, spotlightNews }) {
     const classes = useStyles()
     const theme = useTheme()
     const history = useHistory()
@@ -95,23 +94,20 @@ function HomeSpotlight(props) {
             pr={isMobile ? 0 : 0.8}
             md={4}  
             xs={12}>
-                {news.filter(New => New.spotlightRank === 1).map(New => { return ( 
                 <Box 
-                key={New._id}
                 component={Paper} 
                 className={classes.spotlight} 
                 minHeight="100%"
                 elevation={5}
                 style={{
-                    backgroundImage: 'url(' + New.spotlightImage + ')'
+                    backgroundImage: 'url(' + spotlightNews[2].spotlightImage + ')'
                 }}
                 onClick={() => { 
-                    history.push("novidades/" + New.slug);
+                    history.push("novidades/" + spotlightNews[2].slug);
                 }}>
-                    <Typography className={classes.spotlightSubtitle}>{New.subtitle}</Typography>
-                    <Typography className={classes.spotlightTitle}>{New.spotlightTitle}</Typography>
+                    <Typography className={classes.spotlightSubtitle}>{spotlightNews[2].subtitle}</Typography>
+                    <Typography className={classes.spotlightTitle}>{spotlightNews[2].spotlightTitle}</Typography>
                 </Box> 
-                )})}
             </Box>
 
             <Box
@@ -121,22 +117,33 @@ function HomeSpotlight(props) {
             px={isMobile ? 0 : 0.4}
             md={4} 
             xs={12}>
-                {news.filter(New => New.spotlightRank > 1).map(New => { return ( 
                 <Box 
-                key={New._id}
                 component={Paper} 
                 className={classes.spotlight} 
                 elevation={5}
                 style={{
-                    backgroundImage: 'url(' + New.spotlightImage + ')'
+                    backgroundImage: 'url(' + spotlightNews[1].spotlightImage + ')'
                 }}
                 onClick={() => { 
-                    history.push("novidades/" + New.slug);
+                    history.push("novidades/" + spotlightNews[1].slug);
                 }}>
-                    <Typography className={classes.spotlightSubtitle}>{New.subtitle}</Typography>
-                    <Typography className={classes.spotlightTitle}>{New.spotlightTitle}</Typography>
+                    <Typography className={classes.spotlightSubtitle}>{spotlightNews[1].subtitle}</Typography>
+                    <Typography className={classes.spotlightTitle}>{spotlightNews[1].spotlightTitle}</Typography>
                 </Box>
-                )})}
+                
+                <Box 
+                component={Paper} 
+                className={classes.spotlight} 
+                elevation={5}
+                style={{
+                    backgroundImage: 'url(' + spotlightNews[0].spotlightImage + ')'
+                }}
+                onClick={() => { 
+                    history.push("novidades/" + spotlightNews[0].slug);
+                }}>
+                    <Typography className={classes.spotlightSubtitle}>{spotlightNews[0].subtitle}</Typography>
+                    <Typography className={classes.spotlightTitle}>{spotlightNews[0].spotlightTitle}</Typography>
+                </Box>
             </Box>
 
             <Box 
@@ -159,23 +166,25 @@ function HomeSpotlight(props) {
                         <FaStar /> Novidades
                     </Typography>
 
-                    {news.sort((a, b) => a.createdAt < b.createdAt ? 1 : -1).map(New => { return (
-                    <CustomTooltip 
-                    key={New._id}
-                    title={New.title} 
-                    arrow
-                    TransitionComponent={Zoom} 
-                    placement="top">
-                        <Typography 
+                    {news
+                    .sort((a, b) => a.createdAt < b.createdAt ? 1 : -1)
+                    .map(New => { return (
+                        <CustomTooltip 
                         key={New._id}
-                        className={classes.listItem} 
-                        noWrap
-                        onClick={() => { 
-                            history.push("novidades/" + New.slug); 
-                        }}>
-                            <strong>{New.subtitle}:</strong> {New.title}
-                        </Typography>
-                    </CustomTooltip>
+                        title={New.title} 
+                        arrow
+                        TransitionComponent={Zoom} 
+                        placement="top">
+                            <Typography 
+                            key={New._id}
+                            className={classes.listItem} 
+                            noWrap
+                            onClick={() => { 
+                                history.push("novidades/" + New.slug); 
+                            }}>
+                                <strong>{New.subtitle}:</strong> {New.title}
+                            </Typography>
+                        </CustomTooltip>
                     )})}
                 </Box>
             </Box>

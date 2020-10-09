@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { BiMenu } from 'react-icons/bi'
 import { RiAdminLine, RiShoppingBagLine } from 'react-icons/ri'
@@ -13,6 +14,7 @@ import {
 
 const useStyles = makeStyles(theme => ({
     navButton: {
+        position: "relative",
         cursor: "pointer",
         color: "white",
         fontWeight: "bold",
@@ -24,6 +26,15 @@ const useStyles = makeStyles(theme => ({
         letterSpacing: 1.8,
         '&:hover': {
             backgroundColor: "#202020"
+        },
+        '& span': {
+            backgroundColor: "black",
+            position: "absolute",
+            fontSize: "10px",
+            padding: "3px 5px 3px 7px",
+            right: 0,
+            top: 0,
+            margin: "8px 12px"
         }
     },
     mobileNavbar: {
@@ -49,12 +60,13 @@ function Navbar() {
     const theme = useTheme()
     const history = useHistory()
     const [ mobileNavbar, setMobileNavbar ] = useState(false)
+    const result = useSelector(state => state.calculator)
 
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'), {
         defaultMatches: true
     })
 
-    function changeNavbar(slug){
+    function handleMobileNav(slug){
         setMobileNavbar(false)
         history.push(slug)
     }
@@ -66,9 +78,9 @@ function Navbar() {
         onEscapeKeyDown={() => setMobileNavbar(false)}
         onBackdropClick={() => setMobileNavbar(false)}>
             <Box className={classes.mobileNavbar}>
-                <Box onClick={() => changeNavbar('/')}>HOME</Box>
-                <Box onClick={() => changeNavbar('/loja')}>LOJA</Box>
-                <Box onClick={() => changeNavbar('/banimentos')}>BANIMENTOS</Box>
+                <Box onClick={() => handleMobileNav('/')}>HOME</Box>
+                <Box onClick={() => handleMobileNav('/loja')}>LOJA</Box>
+                <Box onClick={() => handleMobileNav('/banimentos')}>BANIMENTOS</Box>
             </Box>
         </Drawer>
         <Box
@@ -110,7 +122,7 @@ function Navbar() {
 
                     <Box display="flex">
                         <Box className={classes.navButton} onClick={() => ( history.push('/carrinho'))}>
-                            1<RiShoppingBagLine fontSize="24px" />
+                            <span>{ result }</span><RiShoppingBagLine fontSize="24px" />
                         </Box>
                         <Box className={classes.navButton} onClick={() => ( history.push('/admin'))}>
                             <RiAdminLine fontSize="24px" />

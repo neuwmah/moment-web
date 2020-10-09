@@ -36,8 +36,7 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
-function HomeContent(props) {
-    const { news } = props
+function HomeContent({ news }) {
     const classes = useStyles()
     const theme = useTheme()
     const history = useHistory()
